@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "31f6f6dd-b265-4f1f-8900-18923d075b4d",
+		"name": "Metricalo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8092/action/shift4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\":444,\n    \"currency\":\"USD\",\n    \"shift4\":{\n        \"card\": \"card_q0ZMB9v42XHBDoV4lGDWgNqN\",\n        \"customer\": \"cust_m7eMXLkKtoa8JBsv4sUHrtsa\"\n    },\n    \"aci\":{\n        \"paymentBrand\": \"VISA\",\n        \"cardNumber\":\"4200000000000000\",\n        \"cardHolder\":\"Jane Jones\",\n        \"cardExpiryMonth\": \"05\",\n        \"cardExpiryYear\": \"2333\",\n        \"cardCvv\": \"123\"\n\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8092/action/shift4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"action",
+						"shift4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
