@@ -1,0 +1,35 @@
+# see https://symfony.com/doc/current/reference/configuration/framework.html
+framework:
+    secret: '%env(APP_SECRET)%'
+    annotations: false
+    http_method_override: false
+    handle_all_throwables: true
+
+    # Enables session support. Note that the session will ONLY be started if you read or write from it.
+    # Remove or comment this section to explicitly disable session support.
+    session:
+        handler_id: null
+        cookie_secure: auto
+        cookie_samesite: lax
+
+    #esi: true
+    #fragments: true
+    php_errors:
+        log: true
+
+    http_client:
+        scoped_clients:
+            # our clients
+            shift4.client:
+                base_uri: 'https://api.shift4.com'
+                auth_basic: 'pr_test_tXHm9qV9qV9bjIRHcQr9PLPa:'
+            aci.client:
+                base_uri: 'https://eu-test.oppwa.com'
+                headers:
+                    Authorization: "Bearer OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg="
+
+when@test:
+    framework:
+        test: true
+        session:
+            storage_factory_id: session.storage.factory.mock_file

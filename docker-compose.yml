@@ -1,0 +1,27 @@
+services:
+  nginx:
+    build:
+      context: ./docker/nginx/.
+      dockerfile: Dockerfile
+    container_name: metricalo_nginx
+    ports:
+      - "8092:80"
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - metricalonet
+  php:
+    build:
+      context: ./docker/php/.
+      dockerfile: Dockerfile
+    container_name: metricalo_php
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "9000:9000"
+    networks:
+      - metricalonet
+
+networks:
+  metricalonet:
+    driver: bridge
